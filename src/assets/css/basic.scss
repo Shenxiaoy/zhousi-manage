@@ -1,0 +1,151 @@
+
+$themeColor: #ff3938;
+
+.ant-btn-primary {
+  background-image: linear-gradient(90deg,#ff3938,#ff6338),linear-gradient(#ff4c38,#ff4c38);
+}
+.g-panel-title .g-panel-title-content:before {
+  border-left-color: $themeColor;
+}
+
+.ant-modal-header:before, .title-border-left {
+  border-left-color: $themeColor;
+}
+.ant-modal-footer {
+  padding-right: 10px!important;
+}
+.ant-modal-title {
+  line-height: 1;
+  font-size: 14px;
+}
+.ant-modal-close-x{
+  .anticon{
+    vertical-align: 0.20em;
+  }
+}
+
+.ant-checkbox-checked+span {
+  color: $themeColor;
+}
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: $themeColor;
+  border-color: $themeColor;
+}
+.ant-checkbox-wrapper:hover .ant-checkbox-inner,
+.ant-checkbox:hover .ant-checkbox-inner,
+.ant-checkbox-input:focus + .ant-checkbox-inner {
+  border-color: $themeColor;
+}
+// slider 样式调整
+.ant-layout-sider-collapsed .ant-menu-item.ant-menu-item-selected a:before, .ant-layout-sider-collapsed .ant-menu-submenu-vertical.ant-menu-submenu-selected .ant-menu-submenu-title:before, .ant-menu-submenu-popup .ant-menu-vertical .ant-menu-item-selected a:before, .title-border-left {
+  border-left-color: $themeColor!important;
+}
+.ant-menu-vertical .ant-menu-item::after, .ant-menu-vertical-left .ant-menu-item::after, .ant-menu-vertical-right .ant-menu-item::after, .ant-menu-inline .ant-menu-item::after {
+  border-right: none;
+  border-left: 3px solid $themeColor;
+}
+.ant-menu-inline-collapsed {
+  width: 100%;
+}
+.ant-menu-inline-collapsed > .ant-menu-item {
+  width: 100%;
+  padding: 0 20px!important;
+}
+
+.ant-radio-input:focus + .ant-radio-inner {
+  border-color: $themeColor;
+}
+.ant-radio-inner::after {
+  background-color: $themeColor;
+}
+.ant-radio-wrapper:hover .ant-radio,
+.ant-radio:hover .ant-radio-inner,
+.ant-radio-input:focus + .ant-radio-inner {
+  border-color: $themeColor;
+}
+.ant-radio-checked .ant-radio-inner {
+  background: $themeColor!important;
+  border-color: $themeColor!important;
+}
+.ant-radio-checked+span {
+  color: $themeColor;
+}
+
+// table
+.ant-table-wrapper{
+  .ant-table-thead {
+    > tr {
+      > th {
+        background-color: #f4f4f4;
+        border-top: 1px solid #e8e8e8;
+        white-space: nowrap;
+      }
+    }
+  }
+  .ant-table-tbody {
+    > tr {
+      &:nth-of-type(even) {
+        background: #fafafa;
+      }
+      > td {
+        .ant-btn {
+          font-size: 12px;
+          &.ant-btn-link {
+            padding-left: 0;
+          }
+        }
+      }
+    }
+  }
+  .ant-table-placeholder {
+    border-bottom: none;
+  }
+}
+
+// message 样式去掉gui串改的样式
+.ant-message-notice-content {
+  padding: 0;
+  box-shadow: none;
+  .ant-message-success,
+  .ant-message-error,
+  .ant-message-info,
+  .ant-message-warning,
+  .ant-message-loading {
+    padding: 10px 16px;
+    border-radius: 4px;
+  }
+  .ant-message-success {
+    background: #f0f9eb;
+    border: none;
+    span {
+      color: #67c23a;
+    }
+  }
+
+  .ant-message-error {
+    background: #fef0f0;
+    border: none;
+    span {
+      color: #f56c6c;
+    }
+  }
+
+  .ant-message-info {
+    background: #edf2fc;
+    border: none;
+    .anticon {
+      color: #909399;
+    }
+    span {
+      color: #909399;
+    }
+  }
+
+  .ant-message-warning {
+    background: #fdf6ec;
+    border: none;
+    span {
+      color: #e6a23c;
+    }
+  }
+}

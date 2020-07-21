@@ -1,0 +1,398 @@
+// 暂不使用 2020-04-27 ，待业务需要再启用公共style文件。
+// @import './variable.scss';
+// @import './button.scss';
+// @import './steps.scss';
+// @import './radio.scss';
+// @import './vi.scss';
+// @import './xyj-private.scss';
+
+
+.break-all{
+    word-break:break-all;
+}
+.iconfont{
+    // font-family:"font_family" !important;
+    font-size:16px;
+    font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body,
+#app{
+    height: 100%;
+    width: 100%;
+    // font-family: "Microsoft Yahei", 'Avenir', Helvetica, Arial, sans-serif;
+    font-family: "Microsoft Yahei";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-width: $pageMinWidth !important;
+    color: $c-title-text;
+    line-height: $lineHeight;
+    overflow-y: hidden;    //高级浏览器识别
+    overflow-y: inherit\0;    //IE8、9、10识别
+}
+
+
+a, a:active, a:hover{
+    text-decoration: none!important;
+    color: #999;
+}
+input,
+textarea,
+keygen,
+select,
+button {
+    font-family: "Microsoft Yahei", 'Avenir', Helvetica, Arial, sans-serif;
+}
+
+i{
+    font-style:normal;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span {
+    font-size: 13px;
+    line-height: $lineHeight;
+}
+
+
+input,
+textarea,
+keygen,
+select,
+button {
+    font-family: "Microsoft YaHei";
+    outline: 0;
+    font-size: $f-h3;
+    border-radius: $borderRadius;
+    line-height: $lineHeight;
+}
+
+ul,
+li,
+ol {
+    list-style: none;
+}
+
+img {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+}
+
+@each $font, $index in (18, 1), (16, 2), (14, 3), (13, 4) {
+    .h#{$index} {
+        font-size: $font + px;
+    }
+}
+
+@each $font in 60 84 93 120 130 135 156 200 250 268 300 500 {
+    .width_#{$font}px{
+        width: $font + px!important;
+    }
+}
+@each $font in 30 36 50 {
+    .height_#{$font}px{
+        height: $font + px!important;
+    }
+}
+$class-color-list-one:$c-main $c-button $c-list-border $c-nav-left $c-nav-right $c-btn-left $c-btn-right $c-func-text $c-title-text $c-main-text $c-assist-line $c-split-line;
+$class-name-list-one: main button list-border nav-left nav-right btn-left btn-right func-text title-text main-text assist-line split-line;
+@each $color in $class-name-list-one{
+	$i:index($class-name-list-one, $color);
+	.bg-#{$color}{
+		background-color: nth($class-color-list-one, $i);
+    }
+    .c-#{$color}{
+		color: nth($class-color-list-one, $i);
+	}
+}
+
+$fs-num-list:12 13 14 15 16 18 20 22 24 26 28;
+@each $num in $fs-num-list {
+	.fs#{$num}{
+		font-size: #{$num}px;
+	}
+}
+
+@each $styleAb, $styleName in ('mar', 'margin'), ('pad', 'padding') {
+  @each $direction, $directName in ('all', 'all'), ('t', 'top'), ('r', 'right'), ('b', 'bottom'), ('l', 'left') {
+    @for $val from 1 through 50 {
+      $realVal: $val * 2;
+      @if ($direction == 'all') {
+        .#{$styleAb}-#{$realVal} {
+          #{$styleName}: $realVal + px;
+        }
+      }  @else {
+        .#{$styleAb}-#{$direction}-#{$realVal} {
+          #{$styleName}-#{$directName}: $realVal + px;
+        }
+      }
+    }
+  }
+}
+
+$pd-ma-list:0 2 4 5 6 8 12 10 14 15 16 18 20 24 25 26 30 35 40 50 60 70 90 100 120;
+@each $num in $pd-ma-list {
+	.pt-#{$num}{
+		padding-top: #{$num}px !important;
+	}
+	.pl-#{$num}{
+		padding-left: #{$num}px !important;
+	}
+	.pr-#{$num}{
+		padding-right: #{$num}px !important;
+	}
+	.pb-#{$num}{
+		padding-bottom: #{$num}px !important;
+	}
+	.pd-#{$num}{
+		padding: #{$num}px !important;
+	}
+	.mt-#{$num}{
+		margin-top: #{$num}px !important;
+	}
+	.mr-#{$num}{
+		margin-right: #{$num}px !important;
+	}
+	.ml-#{$num}{
+		margin-left: #{$num}px !important;
+	}
+	.mb-#{$num}{
+		margin-bottom: #{$num}px !important;
+	}
+
+}
+.mb-0{
+    margin-bottom:0 !important;
+}
+.pr-0{
+    padding-right:0 !important;
+}
+.border-n{
+    border: none;
+}
+$class-color-list: $c-main $c-body-text $c-menu-text white $c-warning $c-danger $c-assist-line  #f5a623 #f56c6c #4a90e2 #417505 #9013fe ;
+$class-name-list: main bodytext menu-text white warning  danger lightgrey orange red blue green blueviolet ;
+@each $color in $class-name-list{
+	$i:index($class-name-list, $color);
+	.bg-#{$color}{
+		background-color: nth($class-color-list, $i);
+    }
+    .c-#{$color}{
+		color: nth($class-color-list, $i);
+	}
+}
+
+.h1 {
+    font-size: $f-h1;
+}
+
+.h2 {
+    font-size:  $f-h2;
+}
+
+.h3 {
+    font-size:  $f-h3;
+}
+.h4 {
+    font-size: $f-h4;
+}
+
+.need::before, .form-need label::before {
+    content: '*';
+    line-height:$lineHeight;
+    font-size: 14px;
+    color: red;
+    margin-right: 5px;
+}
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+.clear::after{
+    content: '';
+    display: block;
+    visibility: hidden;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+}
+// 面包屑
+.bread-crumb{
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+// 滚动条样式
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0.2);
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+}
+// /*定义滑块 内阴影+圆角*/ 
+::-webkit-scrollbar-thumb:vertical {
+    height: 5px;
+    min-height: 20px; 
+    background-color: rgba(255, 255, 255, 0.5);
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+    width: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.ofh {
+    overflow: hidden;
+}
+
+.hide {
+    display: none;
+}
+
+.relative {
+    position: relative;
+}
+.absolute {
+    position: absolute;
+}
+.m_auto {
+    margin: auto;
+}
+.nowrap {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.cursor-po {
+    cursor: pointer;
+}
+.text-c {
+    text-align: center;
+}
+.text-l {
+    text-align: left !important;
+}
+.text-r {
+    text-align: right !important;
+}
+.text-over {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: break-all;
+    overflow: hidden;
+}
+.dis-box {
+    display: -ms-flexbox;      /* TWEENER - IE 10 */  
+    display: -webkit-flex;     /* NEW - Chrome */  
+    display: flex;  
+    -webkit-box-align: center;
+    -moz-box-align: center; 
+    -ms-flex-align: center; 
+    -webkit-align-items: center;
+    align-items: center;
+}
+.dis-box.wrap{
+    flex-wrap: wrap;
+}
+.dis-box.align-items-top{
+    -webkit-box-align: start;
+    -moz-box-align: start; 
+    -ms-flex-align: start; 
+    -webkit-align-items: flex-start;
+    align-items: flex-start;
+}
+.dis-box.align-items-end{
+    -webkit-box-align: end;
+    -moz-box-align: end; 
+    -ms-flex-align: end; 
+    -webkit-align-items: flex-end;
+    align-items: flex-end;
+}
+.dis-box.justify-content-start{
+    justify-content: flex-start;
+    -ms-flex-pack: flex-start;
+}
+.dis-box.justify-content-center{
+    justify-content: center;
+}
+.dis-box.justify-content-end{
+    justify-content: flex-end;
+    -ms-flex-pack: flex-end;
+}
+.dis-box.justify-content-between{
+    -webkit-justify-content:space-between;
+    justify-content:space-between;
+}
+.dis-box.justify-content-around{
+    -webkit-justify-content:space-around;
+    justify-content:space-around;
+}
+.flex-1{
+    -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */  
+    -moz-box-flex: 1;         /* OLD - Firefox 19- */  
+    -webkit-flex: 1;          /* Chrome */  
+    -ms-flex: 1;              /* IE 10 */  
+    flex: 1;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+.fw-b{
+    font-weight: bold;
+}
+.c9{
+    color: #999;
+}
+.plr-5 {
+    padding: 0 5px;
+}
+.plr-10 {
+    padding: 0 10px;
+}
+.xyj-block{
+    margin-bottom:15px;
+    background: #fff;
+}
+
+.ptb-15{
+    padding-top:15px;
+    padding-bottom:15px;
+}
+.bb{
+    border-bottom: 1px solid $c-el-table-split-line;
+}
+
+.w-full{
+    width: 100%;
+}
+.h-full{
+    height: 100%;
+}

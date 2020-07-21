@@ -1,0 +1,13 @@
+{
+  "code":"200",
+  "data": {
+    "totalCount": 345,
+    "successCount": 23,
+    "errorCount": 3,
+    "downloadPath": "http://10.2.114.121:8089/inventory/exportSupplierSellableQuantity?skuName=11",
+    "billId":4857
+  },
+  "ok":"true",
+  "success":"true",
+  "msg": "错误提示"
+}
