@@ -1,17 +1,17 @@
 <template>
   <div class="test-box">
-    <sider></sider>
+    <div>
+
+    </div>
   </div>
 </template>
 
 <script>
-import sider from '@/components/slider'
 export default {
   data () {
     return {}
   },
   components:{
-    sider
   }
 }
 </script>

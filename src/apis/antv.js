@@ -9,7 +9,7 @@ export default {
   upload: {
     url: `${baseUrl}/inventory/importMerchantSellableQuantity`
   },
-  uploadFile: r.post('inventory/importMerchantSellableQuantity', baseUrl, {headers: {'content-type': 'multipart/form-data'}}),
+  uploadFile: r.post('common/upload', baseUrl, {headers: {'content-type': 'multipart/form-data'}}),
   // 可买数管理
   list: r.post('inventory/findPageSupplierSellableQuantityManagement', baseUrl),
   // 库存数导入
