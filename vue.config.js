@@ -25,15 +25,15 @@ module.exports = {
     loaderOptions: {
       less: {
         modifyVars: {
-          'btn-primary-bg': '#ff3938',
-          'layout-trigger-background': '#ff3938',
-          'link-color': '#ff3938',
-          'ant-btn-link': '#ff3938',
-          'primary-color': '#ff3938'
+          'primary-color': '#ff3938',
+          'link-color': '#ff3938'
         },
         globalVars: {
         },
         javascriptEnabled: true,
+      },
+      scss: {
+        prependData: `@import "~@/assets/css/themeSet.scss";`
       }
     },
     extract: false

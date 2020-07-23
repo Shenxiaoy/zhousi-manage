@@ -1,6 +1,6 @@
 <template>
   <div>
-    <g-table :columns='columns' :data-source='dataSource' :pagination='false'></g-table>
+    <a-table :columns='columns' :data-source='dataSource' :pagination='false'></a-table>
   </div>
 </template>
 

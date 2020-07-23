@@ -2,12 +2,12 @@
   <div class="layout-readcrumb">
     <i class="iconfont icon-dizhi"></i>
     当前位置：
-    <g-breadcrumb separator=">">
-      <g-breadcrumb-item v-for="(item, index) of paths" :key="index">
+    <a-breadcrumb separator=">">
+      <a-breadcrumb-item v-for="(item, index) of paths" :key="index">
         <router-link v-if="item.path" :to="item.path">{{item.title}}</router-link>
         <template v-else>{{item.title}}</template>
-      </g-breadcrumb-item>
-    </g-breadcrumb>
+      </a-breadcrumb-item>
+    </a-breadcrumb>
   </div>
 </template>
 <script>

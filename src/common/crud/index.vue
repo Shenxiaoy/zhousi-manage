@@ -10,7 +10,7 @@
       </slot>
       <slot name='pagination'>
         <div class="crud-pagination" v-if='modelConfig.tableDataSource.length'>
-            <g-pagination
+            <a-pagination
               show-size-changer
               show-quick-jumper
               @showSizeChange="onShowSizeChange"

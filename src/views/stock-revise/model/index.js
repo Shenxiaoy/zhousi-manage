@@ -3,7 +3,7 @@ import {getTreeData} from '@/common/utils/baseFunc'
 const searchForm = {
   skuName: {
     label: '商品名称',
-    widget: 'g-input',
+    widget: 'a-input',
     placeholder: '请输入商品名称',
     options: {
       // rules: [{required: true}]
@@ -11,12 +11,12 @@ const searchForm = {
   },
   gomeSkuCode: {
     label: '国美SKU',
-    widget: 'g-input',
+    widget: 'a-input',
     placeholder: '请输入国美SKU'
   },
   supplierSkuCode: {
     label: '商家SKU',
-    widget: 'g-input',
+    widget: 'a-input',
     placeholder: '请输入商家SKU'
   },
   secondCategoryCode: {
@@ -67,7 +67,7 @@ const searchForm = {
   },
   barcode: {
     label: '商品条码',
-    widget: 'g-input',
+    widget: 'a-input',
     placeholder: '请输入商品条码'
   },
   count: {

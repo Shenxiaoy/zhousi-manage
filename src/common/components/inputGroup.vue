@@ -1,7 +1,7 @@
 <template>
   <div class="crud-input">
-    <g-input :value='first' @change="(e) => {change(e, 'first')}" style='width: 80px'></g-input> ~
-    <g-input :value='last' @change="(e) => {change(e, 'last')}" style='width: 80px'></g-input>
+    <a-input :value='first' @change="(e) => {change(e, 'first')}" style='width: 80px'></a-input> ~
+    <a-input :value='last' @change="(e) => {change(e, 'last')}" style='width: 80px'></a-input>
   </div>
 </template>
 

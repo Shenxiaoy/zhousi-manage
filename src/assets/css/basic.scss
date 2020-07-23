@@ -1,9 +1,10 @@
 
-$themeColor: #ff3938;
+// $themeColor: #ff3938;
+$themeColor: #1890ff;
 
-.ant-btn-primary {
-  background-image: linear-gradient(90deg,#ff3938,#ff6338),linear-gradient(#ff4c38,#ff4c38);
-}
+// .ant-btn-primary {
+//   background-image: linear-gradient(90deg,#ff3938,#ff6338),linear-gradient(#ff4c38,#ff4c38);
+// }
 .g-panel-title .g-panel-title-content:before {
   border-left-color: $themeColor;
 }

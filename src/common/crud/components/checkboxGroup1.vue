@@ -1,9 +1,9 @@
 <template>
   <div class="crud-checkboxGroup">
     <div style='width: 80px'>
-      <g-checkbox :checked="checkAll" @change="onCheckAllChange">全部</g-checkbox>
+      <a-checkbox :checked="checkAll" @change="onCheckAllChange">全部</a-checkbox>
     </div>
-      <g-checkbox-group :value="value" :options="options" @change='change'></g-checkbox-group>
+      <a-checkbox-group :value="value" :options="options" @change='change'></a-checkbox-group>
   </div>
 </template>
 

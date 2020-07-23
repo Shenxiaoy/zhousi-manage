@@ -1,6 +1,6 @@
 <template>
   <div class="crud-checkboxGroup">
-    <g-checkbox-group :value="value" :options="options" @change='change' :defaultValue='allChecked'></g-checkbox-group>
+    <a-checkbox-group :value="value" :options="options" @change='change' :defaultValue='allChecked'></a-checkbox-group>
   </div>
 </template>
 

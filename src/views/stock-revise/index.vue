@@ -13,22 +13,22 @@
       >
       <template slot='top_button'>
         <div class="top_button">
-          <g-dropdown :trigger="['click']">
-            <g-button type='primary'>批量操作<g-icon type="down" /></g-button>
-            <g-menu slot="overlay" @click='batchOperation'>
-              <g-menu-item :key="2">批量导入库存</g-menu-item>
-              <g-menu-item :key="1">导出查询结果</g-menu-item>
-              <g-menu-item :key="3">下载模板</g-menu-item>
-            </g-menu>
-          </g-dropdown>
-          <!-- <g-button type='primary' @click='handleDownList'>导出库存</g-button>
-          <g-button type='primary' @click="butUpload">批量导入库存</g-button>
-          <g-button type='link' style='float: right' @click='downloadTemplate'>下载模板</g-button> -->
+          <a-dropdown :trigger="['click']">
+            <a-button type='primary'>批量操作<a-icon type="down" /></a-button>
+            <a-menu slot="overlay" @click='batchOperation'>
+              <a-menu-item :key="2">批量导入库存</a-menu-item>
+              <a-menu-item :key="1">导出查询结果</a-menu-item>
+              <a-menu-item :key="3">下载模板</a-menu-item>
+            </a-menu>
+          </a-dropdown>
+          <!-- <a-button type='primary' @click='handleDownList'>导出库存</a-button>
+          <a-button type='primary' @click="butUpload">批量导入库存</a-button>
+          <a-button type='link' style='float: right' @click='downloadTemplate'>下载模板</a-button> -->
         </div>
       </template>
       <template v-slot:table='scope'>
         <div>
-          <g-table :columns='scope.columns' :data-source='scope.tableDataSource' :loading='scope.loading' :pagination='false'>
+          <a-table :columns='scope.columns' :data-source='scope.tableDataSource' :loading='scope.loading' :pagination='false'>
             <div slot='shopDetail' class="table--col-descri" slot-scope='text, record'>
               <div style='display: flex'>
                 <img class="img" :src="record.skuImageUrl" alt="未加载">
@@ -53,7 +53,7 @@
               </div>
               <div v-else>
                 <div v-for='(item, k) in record.items.slice(0, 6)' :key='k'>{{item.locationName }}： {{item.inventoryQuantity}}</div>
-                <g-popover placement="bottom" trigger="hover">
+                <a-popover placement="bottom" trigger="hover">
                   <a>更多库存信息</a>
                   <template slot='content'>
                     <div class='table-popver-style'>
@@ -65,7 +65,7 @@
                       ></a-table>
                     </div>
                   </template>
-                </g-popover>
+                </a-popover>
               </div>
             </div>
             <div slot='occupiedQuantity' slot-scope='text, record'>
@@ -87,17 +87,17 @@
               </div>
             </div>
             <div slot='operation' slot-scope="text, record">
-              <g-button v-if='record.items.length' type='link' @click='handleEdit(record)'>编辑</g-button>
-              <a v-else target="_blank" :href='warehouseUrl'><g-button type='link'>设置仓库</g-button></a>
+              <a-button v-if='record.items.length' type='link' @click='handleEdit(record)'>编辑</a-button>
+              <a v-else target="_blank" :href='warehouseUrl'><a-button type='link'>设置仓库</a-button></a>
               
             </div>
-          </g-table>
+          </a-table>
         </div>
       </template>
       </CrudModel>
     </div>
     <div>
-      <g-modal
+      <a-modal
         title="导入商品"
         :visible='visible'
         @cancel='onCancel'
@@ -109,7 +109,7 @@
         <div class="model-main">
           <div >
             <div style='width: 100%'>
-              <g-upload
+              <a-upload
                 :action='uploadConfig.url'
                 :accept='uploadConfig.accept'
                 :headers="uploadConfig.headers"
@@ -121,10 +121,10 @@
               >
               <div>
                 <div style='display: inline-block'>上传文件：</div>
-                <g-button type='primary'>选择文件</g-button>
+                <a-button type='primary'>选择文件</a-button>
                 <div style='display: inline-block;'>（格式支持xls.xlsx,数据最多500条）</div>
               </div>
-              </g-upload>
+              </a-upload>
             </div>
 
             <div style="margin-top: 24px" v-if='uploadResponse.downloadPath'>
@@ -135,9 +135,9 @@
                 <p>
                   <span class="label-width">校验失败：</span>{{uploadResponse.errorCount}}条
                   <a @click="downloadErrorFile(uploadResponse.downloadPath)">
-                    <g-button type="link"
+                    <a-button type="link"
                               size="small"
-                              style="margin-left: 30px"><span class="tx-line">导出校验结果表单</span></g-button>
+                              style="margin-left: 30px"><span class="tx-line">导出校验结果表单</span></a-button>
                   </a>
                 </p>
               </div>
@@ -146,8 +146,8 @@
           </div>
 
         </div>
-      </g-modal>
-      <g-modal
+      </a-modal>
+      <a-modal
         title="编辑"
         :visible='editVisible'
         @cancel='eidtCancel'
@@ -158,13 +158,13 @@
         class="edit-modal-style"
       >
         <div class="modal-form-set">
-          <g-form :label-col="{ span: 8 }" :wrapper-col="{ span: 12 }">
-            <g-form-item v-for='(item, k) in lactionList' :key='k' :label='item.locationName' required>
-              <g-input allow-clear v-model='item.inventoryQuantity'></g-input>
-            </g-form-item>
-          </g-form>
+          <a-form :label-col="{ span: 8 }" :wrapper-col="{ span: 12 }">
+            <a-form-item v-for='(item, k) in lactionList' :key='k' :label='item.locationName' required>
+              <a-input allow-clear v-model='item.inventoryQuantity'></a-input>
+            </a-form-item>
+          </a-form>
         </div>
-      </g-modal>
+      </a-modal>
     </div>
   </div>
 </template>
@@ -173,13 +173,13 @@
 import CrudModel from '@/common/crud'
 import crudConfig from './model'
 import API from 'API'
-import gomeUI from 'gome-ui'
+// import gomeUI from 'gome-ui'
 import gBU from 'ant-design-vue/lib/checkbox'
 import gTable from 'ant-design-vue/lib/table'
 import Breadcrumb from '@/components/Breadcrumb'
 
 import {clickDownUrl} from '@/common/utils/baseFunc.js'
-const message = gomeUI.GMessage
+// const message = gomeUI.GMessage
 
 export default {
   data () {
@@ -198,7 +198,7 @@ export default {
       ],
       uploadResponse: {},
       detailData: {},
-      message,
+      message: this.$message,
       popoverColumns: [
         {
           dataIndex: 'locationName',

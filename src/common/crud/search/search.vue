@@ -1,32 +1,32 @@
 <template>
   <div class="g-panel-search">
-    <g-form class="ant-advanced-search-form" @submit='handleSearch' :form='form'>
-      <!-- <g-panel-title text='查询' /> -->
-      <g-row type='flex' justify='start' style='margin-top: 18px'>
-        <g-col :span='value.layout || 8' v-for='(value, key) in searchForm' :key='key'>
-          <g-form-item :label='value.label'>
+    <a-form class="ant-advanced-search-form" @submit='handleSearch' :form='form'>
+      <!-- <a-panel-title text='查询' /> -->
+      <a-row type='flex' justify='start' style='margin-top: 18px'>
+        <a-col :span='value.layout || 8' v-for='(value, key) in searchForm' :key='key'>
+          <a-form-item :label='value.label'>
             <div v-if='isGui(value)' :style='{width: value.itemWidth || null}'>
               <component
                 :is='value.widget'
-                v-decorator='[key, value.options || null]'
+                v-decorator='[key, value.options || []]'
                 v-bind='value'
                 autocomplete='off'
                 allow-clear
                 @change='searchItemChange($event, key)'
               ></component>
             </div>
-            <CustomComp :style='{width: value.itemWidth || null}' v-decorator='[key, value.options || null]' v-else :item='value' :k='key' @change='searchItemChange($event, key)'></CustomComp>
-          </g-form-item>
-        </g-col>
-      </g-row>
-      <g-row type='flex' justify='end' class='search-but'>
-        <g-col>
-          <g-button style='marginRight: 12px' @click='handleReset'>重置</g-button>
-          <!-- <g-button type="primary" html-type="submit">查询</g-button> -->
-          <g-button type="primary" @click='handleSearch'>搜索</g-button>
-        </g-col>
-      </g-row>
-    </g-form>
+            <CustomComp :style='{width: value.itemWidth || null}' v-decorator='[key, value.options || []]' v-else :item='value' :k='key' @change='searchItemChange($event, key)'></CustomComp>
+          </a-form-item>
+        </a-col>
+      </a-row>
+      <a-row type='flex' justify='end' class='search-but'>
+        <a-col>
+          <a-button style='marginRight: 12px' @click='handleReset'>重置</a-button>
+          <!-- <a-button type="primary" html-type="submit">查询</a-button> -->
+          <a-button type="primary" @click='handleSearch'>搜索</a-button>
+        </a-col>
+      </a-row>
+    </a-form>
   </div>
 </template>
 
@@ -70,7 +70,7 @@ export default {
       this.handleSearch()
     },
     isGui (item) {
-      const leg = /^g-\w+/
+      const leg = /^a-\w+/
       return leg.test(item.widget)
     },
     searchItemChange (result, key) {
@@ -87,7 +87,7 @@ export default {
 }
 </script>
 
-<style lang='scss' scoped>
+<style lang='scss'>
 .g-panel-search {
   background-color: #ffffff;
   // box-shadow: 0px 3px 6px 0px rgba(84, 84, 84, 0.15);
@@ -98,6 +98,22 @@ export default {
   .search-but {
     border-top: solid 1px #f4f4f4;
     padding: 9px 14px;
+  }
+  .ant-form-item-control {
+    text-align: left;
+  }
+  .ant-form-item-control {
+  text-align: left;
+  }
+  .ant-form-item-control-wrapper {
+    width: 51.9%;
+    display: inline-block;
+  }
+  .ant-form-item-label {
+    width: 120px;
+  }
+  .ant-form-item-label label {
+    color: #606266;
   }
 }
 </style>

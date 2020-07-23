@@ -1,7 +1,7 @@
 <template>
   <div class="crud-input">
-    <g-input-number :min='min' :max='max' :precision='precision' :value='first' @change="(e) => {change(e, 'first')}" style='width: 40%'></g-input-number> ~
-    <g-input-number :min='min' :max='max' :precision='precision' :value='last' @change="(e) => {change(e, 'last')}" style='width: 40%'></g-input-number>
+    <a-input-number :min='min' :max='max' :precision='precision' :value='first' @change="(e) => {change(e, 'first')}" style='width: 40%'></a-input-number> ~
+    <a-input-number :min='min' :max='max' :precision='precision' :value='last' @change="(e) => {change(e, 'last')}" style='width: 40%'></a-input-number>
   </div>
 </template>
 

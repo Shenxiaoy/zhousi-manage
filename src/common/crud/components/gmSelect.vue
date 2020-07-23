@@ -1,8 +1,8 @@
 <template>
   <div class="crud-gminput">
-    <g-select :value='value' @change='change' :placeholder="item.placeholder || '请选择'" allowClear>
-      <g-select-option v-for='(item, key) in options' :key='key' :value='item.value'>{{item.label}}</g-select-option>
-    </g-select>
+    <a-select :value='value' @change='change' :placeholder="item.placeholder || '请选择'" allowClear>
+      <a-select-option v-for='(item, key) in options' :key='key' :value='item.value'>{{item.label}}</a-select-option>
+    </a-select>
   </div>
 </template>
 
