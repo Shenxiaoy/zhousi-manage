@@ -1,5 +1,5 @@
 import r from '../common/utils/request'
-const origin = process.env.NODE_ENV === 'development' ? 'http://localhost:9101' : `${window.location.origin}`
+const origin = process.env.NODE_ENV === 'development' ? 'http://localhost:9101' : `https://api.shenxiaoyu.cn/zhousi`
 const baseUrl = `${origin}`
 
 export default {
