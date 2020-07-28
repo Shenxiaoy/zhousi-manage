@@ -1,6 +1,6 @@
 import r from '../common/utils/request'
-const origin = process.env.NODE_ENV === 'development' ? '' : `${window.location.origin}`
-const baseUrl = `${origin}/business`
+const origin = process.env.NODE_ENV === 'development' ? 'http://localhost:9101' : `${window.location.origin}`
+const baseUrl = `${origin}`
 
 export default {
   downList: {
@@ -33,5 +33,13 @@ export default {
   // 品类接口
   category: r.post('sku/common/getCategoryList', baseUrl),
   // 品牌接口
-  brand: r.post('sku/common/getBrandList', baseUrl)
+  brand: r.post('sku/common/getBrandList', baseUrl),
+
+  /**
+   * 商品列表
+  */
+ getList: r.get('goods/list', baseUrl),
+ goodsSave: r.post('goods/superMarket/save', baseUrl),
+ goodsDel: r.post('goods/superMarket/del', baseUrl),
+ goodsUpdate: r.post('goods/superMarket/update', baseUrl)
 }

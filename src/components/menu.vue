@@ -11,15 +11,15 @@ const menuData = {
   data: [
     {
       key: "1",
-      url: "/stock-revise",
-      title: "库存维护",
+      url: "/shop/list",
+      title: "商品列表",
       iconClass: "menuicon iconfont icon-kucunweihu",
       code: 'inventory_defend'
     },
     {
       key: "2",
-      url: "/stock-revise",
-      title: "库存维护",
+      url: "/shop/category",
+      title: "商品分类",
       iconClass: "menuicon iconfont icon-kucunweihu",
       code: 'inventory_defend'
     }

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <a-table :columns='columns' :data-source='dataSource' :pagination='false'></a-table>
+    <a-table :columns='columns' :data-source='dataSource' :pagination='false' rowKey='id'></a-table>
   </div>
 </template>
 

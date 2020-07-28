@@ -35,10 +35,7 @@
                 <div>
                     <div class="des">
                       <div class="des-desc">{{record.skuName}}</div>
-                      <div class="color-disabled">
-                        <div><div class="item-width">国美SKU：{{record.gomeSkuId}}</div></div>
-                        <div><div class="item-width">品类：{{record.categoryName}}</div></div>
-                      </div>
+                      <div class="des-desc">{{record.skuName}}</div>
                       <div class="color-disabled">
                         <div><div class="item-width">商家SKU：{{record.merchantSkuId}}</div></div>
                         <div><div class="item-width">品牌：{{record.brandName}}</div></div>
@@ -173,13 +170,11 @@
 import CrudModel from '@/common/crud'
 import crudConfig from './model'
 import API from 'API'
-// import gomeUI from 'gome-ui'
 import gBU from 'ant-design-vue/lib/checkbox'
 import gTable from 'ant-design-vue/lib/table'
 import Breadcrumb from '@/components/Breadcrumb'
 
 import {clickDownUrl} from '@/common/utils/baseFunc.js'
-// const message = gomeUI.GMessage
 
 export default {
   data () {
@@ -481,7 +476,6 @@ export default {
     white-space:nowrap;
     font-weight: bold;
     }
-    width: 300px;
     height: 100%;
     margin-left: 10px;
     display: flex;

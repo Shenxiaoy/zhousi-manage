@@ -1,5 +1,6 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
 import axios from 'axios'
+import Message from 'ant-design-vue/lib/message'
 /*
 * api url 转换
 * */
@@ -41,17 +42,17 @@ const request = axios.create({
 	withCredentials: true
 })
 
-// request.interceptors.response.use((response) => {
-// 	const resCodes = [900101001, 900102002, 900102003, 900102004, 900102005, 900102006]
-// 	const { code } = response.data
-//   if (resCodes.includes(code)) {
-//     window.location.href = window.location.origin + '/#/login'
-//   }
+request.interceptors.response.use((response) => {
+	const data = response.data
+	if (data.code === 1) {
+		Message.error(data.msg)
+		return Promise.reject(data.msg)
+	}
 
-//   return response
-// }, (err) => {
-// 	window.location.href = window.location.origin + '/#/login'
-// })
+  return response
+}, (err) => {
+	
+})
 
 function requestData (method, data) {
   return JSON.stringify(data)

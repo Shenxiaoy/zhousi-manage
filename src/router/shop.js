@@ -1,20 +1,19 @@
 import Home from '@/views/Home'
-import StockRevise from '@/views/stock-revise'
+import Shop from '@/views/shop'
 import test from '@/views/test'
 export default [
   {
     path: '/',
-    redirect: '/stock-revise',
+    redirect: '/shop/list',
     name: 'home',
-    meta: { title: '库存管理', classify: ['home'] },
     component: Home,
     children: [
       {
-        path: '/stock-revise',
-        name: '库存维护',
-        component: StockRevise,
+        path: '/shop/list',
+        name: '商品列表',
+        component: Shop,
         // component: (() => import('@/views/stock-revise')),
-        meta: { title: '订单管理', classify: ['order'] }
+        meta: { title: '商品列表', classify: ['shop'] }
       },
       {
         path: '/test',

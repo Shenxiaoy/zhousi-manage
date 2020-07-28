@@ -7,9 +7,9 @@
       <Menu></Menu>
       <div class="flex-1">
         <div>
-          <LocaleProvider :locale="zh_CN">
+          <a-config-provider :locale="locale">
             <router-view></router-view>
-          </LocaleProvider>
+          </a-config-provider>
         </div>
         <div
           class="footer"
@@ -27,19 +27,17 @@
 import Menu from "@/components/menu"
 import GmHeader from '@/components/Header'
 import GmNavigation from '@/components/Navigation'
-import zh_CN from 'ant-design-vue/lib/locale-provider/zh_CN'
-import LocaleProvider from 'ant-design-vue/lib/locale-provider'
+import zhCN from 'ant-design-vue/es/locale/zh_CN'
 export default {
   name: "Home",
   components: {
     Menu,
     GmHeader,
-    GmNavigation,
-    LocaleProvider
+    GmNavigation
   },
   data () {
     return {
-      zh_CN
+      locale: zhCN
     }
   }
 };

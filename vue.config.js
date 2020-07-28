@@ -42,7 +42,7 @@ module.exports = {
   configureWebpack: {
     plugins: [
       new OpenBrowserPlugin({
-        url: 'http://localhost:8080/test'
+        url: 'http://localhost:8080'
       })
     ],
     resolve: {
@@ -50,7 +50,8 @@ module.exports = {
       alias: {
         'static': path.resolve(__dirname, 'src/assets'),
         '@': path.resolve(__dirname, 'src'),
-        'API': path.resolve(__dirname, 'src/apis/antv.js')
+        'API': path.resolve(__dirname, 'src/apis/antv.js'),
+        'common': path.resolve(__dirname, 'src/common')
       }
     }
   },
@@ -60,13 +61,8 @@ module.exports = {
     https: false,
     open: true,
     proxy: {
-      '/business': {
-        target: 'http://10.112.6.158',
-        // ws: true,
-        pathRewrite: {
-          '^/commonXyj': ''
-        },
-        bypass: bypassConf('http://10.203.169.49:8080')
+      '/': {
+        target: 'http://localhost:9101'
       },
       '/user': {
         target: 'http://10.112.6.158',
