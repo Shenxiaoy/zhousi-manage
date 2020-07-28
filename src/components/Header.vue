@@ -13,8 +13,7 @@ export default {
   },
   mounted() {
     const { header } = this.$refs;
-    // header.src = `${window.location.origin + process.env.VUE_APP_PUBLIC_PATH}#/header`;
-    header.src = `${this.origin}#/header`
+    // header.src = `${this.origin}#/header`
     header.scrolling = 'no';
   },
 };

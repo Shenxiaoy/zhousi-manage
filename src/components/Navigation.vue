@@ -14,8 +14,7 @@ export default {
   },
   mounted() {
     const { navigation } = this.$refs;
-    // navigation.src = `${window.location.origin + process.env.VUE_APP_PUBLIC_PATH}#/nav`;
-    navigation.src = `${this.origin}#/nav`;
+    // navigation.src = `${this.origin}#/nav`;
     navigation.scrolling = 'no';
   },
 };
