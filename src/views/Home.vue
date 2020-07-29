@@ -15,7 +15,7 @@
           class="footer"
           style="text-align: center;font-size: 12px;color: #909399;line-height: 44px"
         >
-        Copyright 2011-2020 Gome All rights reserved. Proprietary and confidential. | v1.0.0 技术支持：国美供应链科技有限公司
+        Copyright 2011-2020 Gome All rights reserved. Proprietary and confidential. | v1.0.0 技术支持：尼摩船长集团
         </div>
       </div>
     </div>

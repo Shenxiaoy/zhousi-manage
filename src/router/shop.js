@@ -1,6 +1,6 @@
 import Home from '@/views/Home'
 import Shop from '@/views/shop'
-import test from '@/views/test'
+import CategoryManage from '@/views/category-manage'
 export default [
   {
     path: '/',
@@ -16,11 +16,9 @@ export default [
         meta: { title: '商品列表', classify: ['shop'] }
       },
       {
-        path: '/test',
-        name: 'test',
-        component: test,
-        // component: (() => import('@/views/stock-revise')),
-        meta: { title: 'test', classify: ['test'] }
+        path: '/shop/category',
+        name: '商品库存',
+        component: CategoryManage
       }
     ]
   }

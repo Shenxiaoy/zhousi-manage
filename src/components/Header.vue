@@ -25,6 +25,7 @@ export default {
   overflow: hidden;
   border: none;
   box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.1);
+  background: white;
 }
 
 </style>

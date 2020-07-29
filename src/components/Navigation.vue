@@ -2,6 +2,7 @@
   <iframe
     ref="navigation"
     style="width: 100%; height: 50px; border: none;box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.1);"
+    class="navi-cl"
   ></iframe>
 </template>
 <script>
@@ -19,3 +20,8 @@ export default {
   },
 };
 </script>
+<style scoped>
+.navi-cl {
+  background: white;
+}
+</style>
