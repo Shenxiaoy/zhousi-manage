@@ -36,7 +36,7 @@ module.exports = {
         prependData: `@import "~@/assets/css/themeSet.scss";`
       }
     },
-    extract: false
+    // extract: false
   },
   lintOnSave: false,
   configureWebpack: {
