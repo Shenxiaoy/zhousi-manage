@@ -1,10 +1,10 @@
 import Home from '@/views/Home'
 import Shop from '@/views/shop'
-import CategoryManage from '@/views/category-manage'
+import demo from '@/views/demo'
 export default [
   {
     path: '/',
-    redirect: '/shop/list',
+    redirect: '/shop/demo',
     name: 'home',
     component: Home,
     children: [
@@ -16,9 +16,9 @@ export default [
         meta: { title: '商品列表', classify: ['shop'] }
       },
       {
-        path: '/shop/category',
-        name: '商品库存',
-        component: CategoryManage
+        path: '/shop/demo',
+        name: 'demo',
+        component: demo
       }
     ]
   }

@@ -2,6 +2,7 @@ const test = require('./mockdata/test.json');
 const OpenBrowserPlugin = require('open-browser-webpack-plugin')
 const path = require('path')
 const proxyMock = require('obear-mock')
+const webpack = require('webpack')
 
 // 跨域伪造来源配置
 const bypassConf = url => {
@@ -43,6 +44,10 @@ module.exports = {
     plugins: [
       new OpenBrowserPlugin({
         url: 'http://localhost:8080'
+      }),
+      new webpack.ProvidePlugin({
+        'window.Quill': 'quill/dist/quill.js',
+        'Quill': 'quill/dist/quill.js'
       })
     ],
     resolve: {
@@ -83,7 +88,7 @@ module.exports = {
       });
     },
     after: app => {
-      proxyMock(app, {configPath: '/setting'})
+      proxyMock(app, { configPath: '/setting' })
     }
   }
 };

@@ -1,7 +1,9 @@
 <template>
-
-  <iframe class="nav-iframe" ref="header"></iframe>
-
+  <div class="nav-iframe"
+       ref="header">
+    <div class="header-title">ssss</div>
+    <div>222</div>
+  </div>
 </template>
 <script>
 export default {
@@ -11,7 +13,7 @@ export default {
       origin: window.location.origin // `http://10.115.6.21/`
     }
   },
-  mounted() {
+  mounted () {
     const { header } = this.$refs;
     // header.src = `${this.origin}#/header`
     header.scrolling = 'no';
@@ -26,6 +28,10 @@ export default {
   border: none;
   box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.1);
   background: white;
+  text-align: left;
+  .header-title {
+    width: 100%;
+    height: 50px;
+  }
 }
-
 </style>

@@ -7,7 +7,7 @@ import GsliderMenu from './gcomp/g-sider-menu'
 // import gomeUI from 'gome-ui'
 // const message = gomeUI.GMessage
 const menuData = {
-  defaultSelectedKeys: ['1'],
+  defaultSelectedKeys: ['2'],
   data: [
     {
       key: "1",
@@ -18,8 +18,8 @@ const menuData = {
     },
     {
       key: "2",
-      url: "/shop/category",
-      title: "商品分类",
+      url: "/shop/demo",
+      title: "demo",
       iconClass: "menuicon iconfont icon-kucunweihu",
       code: 'inventory_defend'
     }
