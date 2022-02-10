@@ -34,7 +34,7 @@
     "eslint-plugin-vue": "^6.2.2",
     "less": "^2.7.3",
     "less-loader": "^4.1.0",
-    "node-sass": "^4.14.0",
+    "node-sass": "^7.0.0",
     "obear-mock": "^1.0.6",
     "prettier": "^1.19.1",
     "sass-loader": "^8.0.2",
